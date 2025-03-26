@@ -1,0 +1,17 @@
+{
+  "name": "100xdevs-clone",
+  "version": "1.0.0",
+  "description": "a simple course selling website ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "nihal soni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.0"
+  }
+}
