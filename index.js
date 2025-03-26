@@ -1,34 +1,14 @@
 import express from "express";
-const app = 'express'
+import { userRouter } from "./routes/user.js";  
+import { adminRouter } from "./routes/admin.js";
+import { courseRouter } from "./routes/course.js";  
 
-app.post('/user/signup', (req, res) => {
-    res.json({
-        message: "Sign up endpoint"
-    })
-})
+const app = express();
 
-app.post('/user/signin', (req, res) => {
-    res.json({ 
-        message: "sign in endpoint" 
-    })
-})
+app.use("/api/v1/user", userRouter);
+app.use("/api/v1/admin", userRouter)
+app.use("/api/v1/course", courseRouter); 
 
-app.get('/user/purchases', (req, res) => {
-     res.json({
-        message: ""
-     })
-})
-
-app.post('/course/purshase', (req, res) => {
-    res.json({
-
-    })
-})
-
-app.get('/courses', (req, res) => {
-    res.json({
-       message: ""
-    })
-})
-
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
